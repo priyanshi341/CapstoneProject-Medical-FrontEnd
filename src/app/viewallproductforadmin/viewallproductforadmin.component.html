@@ -1,0 +1,38 @@
+<br/>
+<div class="container-fluid">
+    <div class="row">
+       
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">Product Table</div>
+                <div class="card-body">
+            <table class="table table-stripped">
+                <tr>
+                    <th >Image</th>
+                    <th >Product name</th>
+                    <th style="text-align: center;">Price</th>
+                    <th style="text-align: center;"> Quantity</th>
+                    <th style="text-align: center;">Action</th>
+                </tr>
+                <tr *ngFor="let c of product">
+                    <td >
+                        <img src="{{c.image}}" width="200px" height="100px"/>
+                    </td>
+                    <td >{{c.name}}</td>
+                   
+                    <td style="text-align: center;">{{c.price}}</td>
+                    <td style="text-align: center;">{{c.quantity}}</td>
+                    <td style="text-align: center;">
+                        <input type="button" value="Update" class="btn btn-warning" (click)="updatefunction(c.id)"/>
+                        &nbsp;&nbsp;||&nbsp;&nbsp;
+                        <input type="button" value="Delete" class="btn btn-danger" (click)="deletefunction(c.id)"/>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        </div>
+    </div>
+    </div>
+    <br/>
+    
+    </div>

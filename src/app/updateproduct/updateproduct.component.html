@@ -1,0 +1,81 @@
+<br/>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-info">
+                    Update Product
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="updateproductform" (ngSubmit)="updateaction()">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label> Name</label>
+                                <input type="text" formControlName="updatename"  class="form-control" [(ngModel)]="product.name" />
+                            </div>
+                        </div>
+                       
+                       <br/>
+                       <div class="row">
+                        <div class="col-md-12">
+                            <label> Description</label>
+                            <input type="text" formControlName="description" [(ngModel)]="product.description"  class="form-control"/>
+                        </div>
+                       </div>
+                       
+                    <br/>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label> Price</label>
+                                <input type="text" formControlName="price" [(ngModel)]="product.price"  class="form-control"/>
+                            </div>
+                            <div class="col-md-6">
+                                <label> Quantity</label>
+                                <input type="text" formControlName="quantity" [(ngModel)]="product.quantity"  class="form-control"/>
+                            </div>
+                           
+                        </div>
+                      
+                    <br/>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label> Select Image</label><br/>
+                            <input type="file" (change)="fileaction($event)"/>
+                        </div>
+                        <div class="col-md-6">
+                            <img src="{{path}}" width="150px" height="100px"/>
+                        </div>
+                    </div>
+                        
+                        <br/>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <label> Category:</label>
+                                </div>
+                               
+                                <div class="col-md-4">
+                                    <select formControlName="selectid" class="form-control">
+                            
+                                        <option *ngFor="let c of category" value="{{c.id}}">
+                                         {{c.name}}
+                                        </option>
+                                       </select>
+                                </div>
+                        
+                        <div class="col-md-6"></div>
+                            </div>
+                       
+                        <br/>
+                       <div class="row">
+                        <div class="col-md-12" style="text-align: center;">
+                            <input type="submit" value="Update" class="btn btn-dark"/>
+                        </div>
+                       </div> 
+                       
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>

@@ -1,0 +1,26 @@
+<br/>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header bg-info">
+                    Add Category
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="categoryform" (ngSubmit)="buttonaction()">
+                        <label>Name</label>
+                        <input type="text" formControlName="name" class="form-control"/>
+                        <br/>
+                        <label>Description</label>
+                        <input type="text" formControlName="description" class="form-control"/>
+                        <br/>
+                        <input type="submit" value="Add" class="btn btn-primary" [disabled]="categoryform.invalid"/>
+                      <br/>
+                      <label style="color: green;font-style: oblique;">{{msg}}</label>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+    </div>

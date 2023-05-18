@@ -1,0 +1,56 @@
+<br/>
+<div class="container-fluid">
+    <div class="row">
+       
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">Order Item</div>
+                <br/>
+                <div class="row">
+            
+                            
+                            <div class="col-md-1"> <label style="font-weight: bold;font-size: larger;padding-left: 30px;">Search:</label></div>
+                            <div class="col-md-11" style="padding-right: 100px;">
+                         <input type="text" name="textename" (ngModelChange)="search()" [(ngModel)]="ename" class="form-control" style="border-color: brown;border-style: solid;"/>
+                            </div>
+                       
+                </div>
+                <div class="card-body">
+            <table class="table table-stripped">
+                <tr>
+                    <th>Image</th>
+                    <th (click)="sort('name')">Product name</th>
+                    <th (click)="sort('price')">Price</th>
+                    <th>Select Quantity</th>
+                    <th style="text-align: center;">Action</th>
+                </tr>
+                <tr *ngFor="let c of product  | paginate:{itemsPerPage:3,currentPage:p} | orderBy:key:reverse" >
+                    <td >
+                        <img src="{{c.image}}" width="200px" height="100px"/>
+                    </td>
+                    <td >{{c.name}}</td>
+                   
+                    <td >{{c.price}}</td>
+                    <td width="20%"><form [formGroup]="selectproductform">
+                        <input type="text" formControlName="quanty"  class="form-control"/>
+                    </form></td>
+                    <td width="25%" style="text-align: center;">
+                        <input type="button" value="Add to Cart" class="btn btn-primary" (click)="selectbutton(c.id)"/>
+                        &nbsp;&nbsp;||&nbsp;&nbsp;
+                        <input type="button" value="View Product" class="btn bg-info" (click)="viewbuttonaction(c.id)"/>
+                    </td>
+                </tr>
+              
+               <pagination-controls (pageChange)="p=$event" ></pagination-controls>
+            
+            </table>
+        </div>
+        </div>
+    </div>
+    </div>
+    <br/>
+   
+    <div class="row">
+       
+    </div>
+    </div>

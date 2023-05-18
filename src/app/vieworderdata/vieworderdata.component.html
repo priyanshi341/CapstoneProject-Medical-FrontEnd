@@ -1,0 +1,88 @@
+
+
+
+ 
+<div class="container-fluid" *ngIf="chk">
+    <br/>
+    <div class="row">
+        <div class="col-md-12" style="text-align: center;">
+            <label style="color: blueviolet;font-size: medium;font-weight: bold;">Your Order Has Been Successfully Placed!!!</label>
+        </div>
+        <br/>
+        <br/>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">Your Order Details</div>
+                <div class="card-body">
+            <table class="table table-stripped">
+                <tr>
+                    <th>Image</th>
+                    <th>Product name</th>
+                    <th>Product price</th>
+                    <th>Selected Quantity</th>
+                    <th>Total price</th>
+                <th>Date Of Deleivery</th>
+                    
+                </tr>
+                <tr *ngFor="let c of product">
+                    <td width="15%">
+                        <img src="{{c.image}}" width="100%" height="100px"/>
+                    </td>
+                    <td width="20%">{{c.name}}</td>
+                    <td width="20%">{{c.productprice}}</td>
+                    <td width="20%">{{c.quantity}}</td>
+                    <td width="10%">{{c.totalprice}}</td>
+                    <td width="15%">{{date |date:"mediumDate"}}</td>
+                </tr>
+               
+            </table>
+        </div>
+        </div>
+    </div>
+    </div>
+    
+   
+  
+    </div>
+    
+
+    
+
+    <div class="container-fluid" *ngIf="!chk">
+      
+       <br/>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">Your Previous Order Details</div>
+                    <div class="card-body">
+                <table class="table table-stripped">
+                    <tr>
+                      
+                        <th>Product name</th>
+                        <th>Product price</th>
+                        <th>Selected Quantity</th>
+                        <th>Total price</th>
+                        <th>Date of order</th>
+                        
+                    </tr>
+                    <tr *ngFor="let c of selectedorderitem">
+                       
+                        <td >{{c.productname}}</td>
+                        <td >{{c.productprice}}</td>
+                        <td >{{c.productquantity}}</td>
+                        <td >{{c.totalprice}}</td>
+                        <td>{{c.date}}</td>
+                    </tr>
+                   
+                </table>
+            </div>
+            </div>
+        </div>
+        </div>
+        
+       
+      
+        </div>

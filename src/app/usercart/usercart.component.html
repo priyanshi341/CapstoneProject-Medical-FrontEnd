@@ -1,0 +1,45 @@
+<br/>
+<div class="container-fluid">
+    <div class="row">
+       
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">Products Added To Cart</div>
+                <div class="card-body">
+            <table class="table table-stripped">
+                <tr>
+                    <th>Image</th>
+                    <th>Product name</th>
+                    <th>Product Price</th>
+                    <th>Selected Quantity</th>
+                    <th>Total Price </th>
+                    <th>Action</th>
+                </tr>
+                <tr *ngFor="let c of product;let i=index">
+                    <td >
+                        <img src="{{c.image}}" width="200px" height="100px"/>
+                    </td>
+                    <td >{{c.name}}</td>
+                   
+                    <td>{{c.productprice}}</td>
+                    <td >{{c.quantity}}</td>
+                   <td>{{c.totalprice}}</td>
+                    <td >
+                        <input type="button" value="Delete" class="btn btn-danger" (click)="deleteitem(i)"/>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        </div>
+    </div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-md-12" style="text-align: center;">
+       <input type="button" value="Order Now" class="btn btn-primary" (click)="orderaction()"/> 
+        </div>
+    </div>
+    <div class="row">
+       
+    </div>
+    </div>

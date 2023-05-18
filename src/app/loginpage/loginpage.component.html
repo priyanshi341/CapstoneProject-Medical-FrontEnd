@@ -1,0 +1,36 @@
+<br/>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-info">
+                   LogIn
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="loginform" (ngSubmit)="actioncheck()">
+                        <label style="font-weight: bold;">UserName</label>
+                        <input type="text" formControlName="username" class="form-control"/>
+                        <span *ngIf="loginform.controls.username.touched && loginform.controls.username.invalid">
+                        <label style="color: red;">Enter username </label>
+                        </span>
+                        <br/>
+                        <label style="font-weight: bold;">Password</label>
+                        <input type="password" formControlName="password" class="form-control"/>
+                        <span *ngIf="loginform.controls.password.touched && loginform.controls.password.invalid">
+                            <label style="color: red;">Enter Correct Password </label>
+                        </span>
+                        <br/>
+                        
+
+                        <input type="submit" value="Login" class="btn bg-info" [disabled]="loginform.invalid"/>
+                        &nbsp;&nbsp;&nbsp;<a routerLink="/forgotpassword" >Forgot Password</a>
+                        <br/>
+                        <label style="color: red;font-style: oblique;">{{msg}}</label>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>

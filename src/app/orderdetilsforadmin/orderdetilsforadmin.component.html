@@ -1,0 +1,36 @@
+<div class="container-fluid">
+     <br/> 
+       
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header"> Order Details</div>
+                <div class="card-body">
+            <table class="table table-stripped">
+                <tr>
+                  
+                    <th>Product name</th>
+                    <th>Product price</th>
+                    <th>Selected Quantity</th>
+                    <th>Total price</th>
+                    <th>Date of order</th>
+                    
+                </tr>
+                <tr *ngFor="let c of order">
+                   
+                    <td >{{c.productname}}</td>
+                    <td >{{c.productprice}}</td>
+                    <td >{{c.productquantity}}</td>
+                    <td >{{c.totalprice}}</td>
+                    <td>{{c.date}}</td>
+                </tr>
+               
+            </table>
+        </div>
+        </div>
+    </div>
+    </div>
+    
+   
+  
+    </div>
